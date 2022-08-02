@@ -1,0 +1,10 @@
+Klasa Car powinna mieć tak
+id wygenerowane
+brand
+przejechane kilometry
+model
+rok wydania
+id wypożyczającej osoby
+Data wypożyczenia
+Planowana data zwrotu
+Cena wypożyczenia dziennego
