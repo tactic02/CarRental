@@ -8,3 +8,4 @@ id wypożyczającej osoby
 Data wypożyczenia
 Planowana data zwrotu
 Cena wypożyczenia dziennego
+kara za każdy dzień spóźnienia

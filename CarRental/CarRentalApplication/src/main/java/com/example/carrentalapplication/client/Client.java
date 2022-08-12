@@ -21,11 +21,11 @@ public class Client {
     @Size(min = 5, max = 100)
     private String lastName;
     @Email
+    @NotNull
     private String email;
     @ManyToMany
     private List<Car> previousCarsFromThisCarRental;
-    @OneToOne
-    private Car currentCar;
+    private int currentCar;
     @Size(min = 2, max = 100)
     private String city;
     @Size(min = 2, max = 100)
@@ -40,7 +40,7 @@ public class Client {
         private final String email;
 
         private List<Car> previousCarsFromThisCarRental;
-        private Car currentCar;
+        private int currentCar;
         private String city;
         private String address;
 
@@ -55,7 +55,7 @@ public class Client {
             return this;
         }
 
-        public Builder setCurrentCar(Car currentCar){
+        public Builder setCurrentCar(int currentCar){
             this.currentCar = currentCar;
             return this;
         }
@@ -122,11 +122,11 @@ public class Client {
         return previousCarsFromThisCarRental;
     }
 
-    public Car getCurrentCar() {
+    public int getCurrentCar() {
         return currentCar;
     }
 
-    public void setCurrentCar(Car currentCar) {
+    public void setCurrentCar(int currentCar) {
         this.currentCar = currentCar;
     }
 
@@ -153,6 +153,8 @@ public class Client {
     public void addCar(Car car){
         previousCarsFromThisCarRental.add(car);
     }
+
+
 
     @Override
     public String toString() {

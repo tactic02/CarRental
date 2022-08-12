@@ -1,5 +1,6 @@
 package com.example.carrentalapplication.car;
 
+import com.example.carrentalapplication.Loan.Loan;
 import com.example.carrentalapplication.client.Client;
 
 import javax.persistence.*;
@@ -34,19 +35,24 @@ public class Car {
     private LocalDateTime endTimeOfBorrowed;
     @NotNull
     private int rentalPriceFor1Day;
+    @NotNull
+    private int dailyPenalty;
     @ManyToMany(mappedBy = "previousCarsFromThisCarRental")
     private List<Client> previousClients = new ArrayList<>();
+    @OneToMany
+    public List<Loan> storyOfLoanForCar = new ArrayList<>();
 
     public Car(){
 
     }
 
-    public Car(String brand, int kilometersTraveled, String model, int yearOfRelease, int rentalPriceFor1Day){
+    public Car(String brand, int kilometersTraveled, String model, int yearOfRelease, int rentalPriceFor1Day, int dailyPenalty){
         this.brand = brand;
         this.kilometersTraveled = kilometersTraveled;
         this.model = model;
         this.yearOfRelease = yearOfRelease;
         this.rentalPriceFor1Day = rentalPriceFor1Day;
+        this.dailyPenalty = dailyPenalty;
     }
 
     public Long getId() {
@@ -121,6 +127,14 @@ public class Car {
         this.rentalPriceFor1Day = rentalPriceFor1Day;
     }
 
+    public int getDailyPenalty() {
+        return dailyPenalty;
+    }
+
+    public void setDailyPenalty(int dailyPenalty) {
+        this.dailyPenalty = dailyPenalty;
+    }
+
     public List<Client> getPreviousClients() {
         return previousClients;
     }
@@ -131,6 +145,14 @@ public class Car {
 
     public void addClient(Client client){
         previousClients.add(client);
+    }
+
+    public List<Loan> getStoryOfLoanForCar() {
+        return storyOfLoanForCar;
+    }
+
+    public void setStoryOfLoanForCar(List<Loan> storyOfLoanForCar) {
+        this.storyOfLoanForCar = storyOfLoanForCar;
     }
 
     @Override

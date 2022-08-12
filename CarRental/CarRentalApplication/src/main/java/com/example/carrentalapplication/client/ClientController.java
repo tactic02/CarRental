@@ -1,9 +1,8 @@
 package com.example.carrentalapplication.client;
 
-import com.example.carrentalapplication.car.Car;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 
-import java.net.CacheRequest;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,6 +20,10 @@ public class ClientController {
 
     public Optional<Client> findClientByEmail(String email){
         return clientService.findClientByEmail(email);
+    }
+
+    public List<Client> findAlLClient(){
+        return clientService.findAllClient();
     }
 
 }

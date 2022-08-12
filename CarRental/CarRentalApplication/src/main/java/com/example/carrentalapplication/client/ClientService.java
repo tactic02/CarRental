@@ -1,7 +1,5 @@
 package com.example.carrentalapplication.client;
 
-import com.example.carrentalapplication.car.Car;
-import com.example.carrentalapplication.car.CarRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +19,10 @@ public class ClientService {
 
     public Optional<Client> findClientByEmail(String email){
         return clientRepository.findClientByEmail(email);
+    }
+
+    public List<Client> findAllClient(){
+        return clientRepository.findAllClient();
     }
 
 

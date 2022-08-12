@@ -1,0 +1,1 @@
+Id, kiedy zostało dane auto wypożyczone, kiedy dane auto zostało zwrócone, id clienta, id auta, koszt

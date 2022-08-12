@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation = "http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+    <changeSet id="0001" author="Michał Olesiński">
+        <createTable tableName="car">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="brand" type="VARCHAR(100)" >
+                <constraints nullable="false" />
+            </column>
+            <column name="kilometersTraveled" type="VARCHAR(100)" >
+                <constraints nullable="false" />
+            </column>
+            <column name="model" type="VARCHAR(100)" >
+                <constraints nullable="false" />
+            </column>
+            <column name="yearOfRelease" type="int" >
+                <constraints nullable="false" />
+            </column>
+            <column name="carBorrowedId" type="long" />
+            <column name="rentalPriceFor1day" type="int" />
+            <column name="startTimeOfBorrowed" type="Date" />
+            <column name="endTimeOfBorrowed" type="Date" />
+            <column name="dailyPenalty" type="int" />
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

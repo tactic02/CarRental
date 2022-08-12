@@ -1,0 +1,6 @@
+id long
+String firstName NotNull
+String lastName NotNull
+String email
+String city
+String address
